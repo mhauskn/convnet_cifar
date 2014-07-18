@@ -101,6 +101,8 @@ class HiddenLayer(object):
         # parameters of the model
         self.params = [self.W, self.b]
 
+    def reconstruction_cost(self, x):
+        return T.sum((self.output - x) ** 2)
 
 class MLP(object):
     """Multi-Layer Perceptron Class
